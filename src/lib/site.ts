@@ -19,6 +19,8 @@ export const ADDRESS_MR = "दत्त मंदिर रोड, वाकड,
 export const ADDRESS_EN = "Datt Mandir Road, Wakad, Pune";
 export const MAPS_URL =
   "https://www.google.com/maps/search/?api=1&query=Datt+Mandir+Road+Wakad+Pune";
+export const MAPS_EMBED_URL =
+  "https://www.google.com/maps?q=Datt+Mandir+Road,+Wakad,+Pune&output=embed";
 
 export const PHONES = ["7387788719", "8432687009", "7448259285"] as const;
 export const PRIMARY_PHONE = PHONES[0];
