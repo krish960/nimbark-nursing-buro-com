@@ -128,10 +128,10 @@ export const STEPS = [
 ];
 
 export const NAV_LINKS = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About Us" },
-  { to: "/services", label: "Our Services" },
-  { to: "/why-us", label: "Why Choose Us" },
-  { to: "/how-it-works", label: "How It Works" },
-  { to: "/contact", label: "Contact Us" },
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About Us" },
+  { href: "#services", label: "Our Services" },
+  { href: "#why-us", label: "Why Choose Us" },
+  { href: "#how-it-works", label: "How It Works" },
+  { href: "#contact", label: "Contact Us" },
 ] as const;
