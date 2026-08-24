@@ -52,7 +52,7 @@
 :root {
   --radius: 1rem;
   --background: oklch(1 0 0);
-  --surface: oklch(0.976 0.011 232);
+  --surface: oklch(0.988 0.004 235);
   --foreground: oklch(0.24 0.035 250);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.24 0.035 250);
@@ -148,8 +148,8 @@
 @utility gradient-hero {
   background-image: linear-gradient(
     135deg,
-    color-mix(in oklab, var(--primary) 12%, transparent),
-    color-mix(in oklab, var(--accent) 12%, transparent)
+    color-mix(in oklab, var(--primary) 7%, transparent),
+    color-mix(in oklab, var(--accent) 6%, transparent)
   );
 }
 

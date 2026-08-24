@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { MapPin, Phone } from "lucide-react";
 import {
   ADDRESS_EN,
@@ -14,7 +13,7 @@ import {
 
 export function Footer() {
   return (
-    <footer className="mt-16 border-t border-border bg-surface pb-28 pt-12 sm:pb-12">
+    <footer className="border-t border-border bg-surface pb-28 pt-12 sm:pb-12">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-8 lg:px-8">
         <div className="min-w-0">
           <h3 className="text-lg font-extrabold">{BRAND}</h3>
@@ -26,10 +25,10 @@ export function Footer() {
           <h4 className="text-sm font-bold uppercase tracking-wide text-muted-foreground">Pages</h4>
           <ul className="mt-3 space-y-2">
             {NAV_LINKS.map((link) => (
-              <li key={link.to}>
-                <Link to={link.to} className="text-sm text-foreground/80 hover:text-primary">
+              <li key={link.href}>
+                <a href={link.href} className="text-sm text-foreground/80 hover:text-primary">
                   {link.label}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>

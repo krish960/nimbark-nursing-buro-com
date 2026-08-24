@@ -1,5 +1,4 @@
-import { Link } from "@tanstack/react-router";
-import { Menu, Phone, X } from "lucide-react";
+import { HeartPulse, Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
 import { BRAND, NAV_LINKS, PRIMARY_PHONE, telHref } from "@/lib/site";
 
@@ -7,34 +6,32 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur-md">
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:px-6 lg:px-8">
-        <Link to="/" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
+        <a href="#home" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
           <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl gradient-cta text-primary-foreground shadow-soft">
-            <Phone className="h-5 w-5" aria-hidden="true" />
+            <HeartPulse className="h-5 w-5" aria-hidden="true" />
           </span>
           <span className="min-w-0">
-            <span className="block truncate font-display text-base font-extrabold leading-tight sm:text-lg">
+            <span className="block truncate font-display text-[15px] font-extrabold leading-tight sm:text-lg">
               {BRAND}
             </span>
             <span className="block truncate text-[11px] font-medium text-muted-foreground sm:text-xs">
               Service • Humanity • Trust
             </span>
           </span>
-        </Link>
+        </a>
 
         <div className="flex items-center gap-2">
           <nav className="hidden items-center gap-1 lg:flex">
             {NAV_LINKS.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                activeOptions={{ exact: link.to === "/" }}
-                activeProps={{ className: "bg-primary-soft text-primary" }}
-                className="rounded-full px-3 py-2 text-sm font-semibold text-foreground/80 transition-colors hover:bg-muted"
+              <a
+                key={link.href}
+                href={link.href}
+                className="rounded-full px-3 py-2 text-sm font-semibold text-foreground/80 transition-colors hover:bg-muted hover:text-primary"
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
           </nav>
           <a
@@ -60,16 +57,14 @@ export function Header() {
         <nav className="border-t border-border bg-background px-4 pb-4 pt-2 lg:hidden">
           <ul className="flex flex-col">
             {NAV_LINKS.map((link) => (
-              <li key={link.to}>
-                <Link
-                  to={link.to}
-                  activeOptions={{ exact: link.to === "/" }}
-                  activeProps={{ className: "text-primary" }}
+              <li key={link.href}>
+                <a
+                  href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-xl px-3 py-3.5 text-base font-semibold text-foreground/90 transition-colors hover:bg-muted"
+                  className="block rounded-xl px-3 py-3.5 text-base font-semibold text-foreground/90 transition-colors hover:bg-muted hover:text-primary"
                 >
                   {link.label}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
