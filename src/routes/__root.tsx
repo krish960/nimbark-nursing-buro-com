@@ -80,13 +80,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Nimbalk Nursing Bureau — Home Care & Nursing, Wakad Pune" },
+      { title: "Nimbark Nursing Bureau — Home Care & Nursing, Wakad Pune" },
       {
         name: "description",
         content:
-          "Nimbalk Nursing Bureau, Wakad Pune — experienced, trained and trusted staff for newborn baby care, patient care, nursing caretakers, baby sitters and home help.",
+          "Nimbark Nursing Bureau, Wakad Pune — experienced, trained and trusted staff for newborn baby care, patient care, nursing caretakers, baby sitters and home help.",
       },
-      { name: "author", content: "Nimbalk Nursing Bureau" },
+      { name: "author", content: "Nimbark Nursing Bureau" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
