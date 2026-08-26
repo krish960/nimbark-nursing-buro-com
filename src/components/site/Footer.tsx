@@ -76,9 +76,20 @@ export function Footer() {
       </div>
 
       <div className="mx-auto mt-10 max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p className="border-t border-border pt-6 text-xs text-muted-foreground">
-          © {new Date().getFullYear()} {BRAND}. All rights reserved.
-        </p>
+        <div className="flex flex-col items-center justify-between gap-3 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row">
+          <p>© {new Date().getFullYear()} {BRAND}. All rights reserved.</p>
+          <p>
+            Developed by{" "}
+            <a
+              href="https://portfolio-project-final.vercel.app/#about"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-primary hover:underline"
+            >
+              Krushna Gajanan Thombare
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
