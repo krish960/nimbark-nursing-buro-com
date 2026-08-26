@@ -98,16 +98,16 @@ function HomePage() {
               <Sparkles className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
               <span className="truncate">{BRAND}</span>
             </span>
-            <h1 className="mt-4 text-[28px] font-extrabold leading-[1.15] sm:text-4xl lg:text-5xl xl:text-6xl">
+            <h1 className="mt-4 font-display text-[26px] font-extrabold leading-[1.2] tracking-tight sm:text-4xl lg:text-5xl xl:text-6xl">
               Professional Home Care &amp; Nursing Services
             </h1>
-            <p className="mt-3 text-lg font-bold text-primary sm:text-xl">
+            <p className="mt-3 text-base font-bold tracking-wide text-primary sm:text-xl">
               Service • Humanity • Trust
             </p>
-            <p className="mt-3 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-muted-foreground sm:text-lg">
               Experienced, trained and trusted staff available for your home care needs.
             </p>
-            <p className="mt-2 text-base font-semibold text-foreground/80">{TAGLINE_MR}</p>
+            <p className="mt-2 text-[15px] font-semibold text-foreground/80 sm:text-base">{TAGLINE_MR}</p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a
@@ -170,7 +170,7 @@ function HomePage() {
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
             <div className="min-w-0 order-2 lg:order-1">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent">About Us</p>
-              <h2 className="mt-2 text-2xl font-extrabold leading-tight sm:text-3xl lg:text-4xl">
+              <h2 className="mt-2 text-[22px] font-extrabold leading-tight sm:text-3xl lg:text-4xl">
                 सेवा हीच आमची ओळख
               </h2>
               <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -312,7 +312,7 @@ function HomePage() {
           <div className="overflow-hidden rounded-3xl border border-border gradient-hero p-6 shadow-soft sm:p-10">
             <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
               <div className="min-w-0">
-                <h2 className="text-2xl font-extrabold leading-tight sm:text-3xl lg:text-4xl">
+                <h2 className="text-[22px] font-extrabold leading-tight sm:text-3xl lg:text-4xl">
                   Need Reliable Home Care?
                 </h2>
                 <p className="mt-3 text-base leading-relaxed text-muted-foreground">
