@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import {
   Check,
   CheckCircle2,
@@ -11,6 +12,7 @@ import {
   ShieldCheck,
   Sparkles,
   Users,
+  X,
 } from "lucide-react";
 
 import heroImage from "@/assets/hero-home-care.jpg";
@@ -82,12 +84,30 @@ const pillars = [
 ];
 
 const gallery = [
-  { src: patientImage, alt: "Nursing caretaker supporting an elderly patient at home" },
-  { src: babySitterImage, alt: "Baby sitter playing with a toddler at home" },
-  { src: homeHelpImage, alt: "Home helper assisting with household work" },
+  {
+    src: patientImage,
+    alt: "Nursing caretaker supporting an elderly patient at home",
+    title: "Patient Care & Nursing Caretaker",
+    info: "We arrange trained nursing caretakers and bedside attendants for patients recovering at home. They help with daily needs, hygiene, mobility and comfort — with patience, discipline and dignity, day or night.",
+  },
+  {
+    src: babySitterImage,
+    alt: "Baby sitter playing with a toddler at home",
+    title: "New Born Baby Care & Baby Sitter",
+    info: "Our experienced baby sitters and newborn care staff look after feeding, bathing, sleep routines and safe play, so your child stays comfortable and cared for while you are at work or travelling.",
+  },
+  {
+    src: homeHelpImage,
+    alt: "Home helper assisting with household work",
+    title: "Home Helper & Maid Assistance",
+    info: "Trusted home helpers and maids take care of everyday household work and support elders through the day, keeping your home clean, organised and easy to run.",
+  },
 ];
 
 function HomePage() {
+  const [selected, setSelected] = useState<number | null>(null);
+  const active = selected !== null ? gallery[selected] : null;
+
   return (
     <>
       {/* HOME / HERO */}
@@ -231,10 +251,13 @@ function HomePage() {
           </div>
 
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {gallery.map((image) => (
-              <div
+            {gallery.map((image, index) => (
+              <button
                 key={image.alt}
-                className="overflow-hidden rounded-3xl border border-border bg-card shadow-soft"
+                type="button"
+                onClick={() => setSelected(index)}
+                aria-haspopup="dialog"
+                className="group relative cursor-pointer overflow-hidden rounded-3xl border border-border bg-card text-left shadow-soft transition-shadow hover:shadow-lift"
               >
                 <img
                   src={image.src}
@@ -242,9 +265,13 @@ function HomePage() {
                   width={1200}
                   height={912}
                   loading="lazy"
-                  className="aspect-[4/3] h-auto w-full object-cover transition-transform duration-500 hover:scale-[1.03]"
+                  className="aspect-[4/3] h-auto w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
-              </div>
+                <span className="absolute inset-x-3 bottom-3 flex items-center justify-between gap-2 rounded-2xl bg-foreground/70 px-4 py-2.5 text-sm font-bold text-background backdrop-blur-sm">
+                  <span className="truncate">{image.title}</span>
+                  <span className="shrink-0 text-xs font-semibold opacity-80">Tap for info</span>
+                </span>
+              </button>
             ))}
           </div>
         </div>
@@ -426,6 +453,63 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      {active ? (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={active.title}
+          className="fixed inset-0 z-50 grid place-items-center bg-foreground/60 p-4 backdrop-blur-sm"
+          onClick={() => setSelected(null)}
+        >
+          <div
+            className="w-full max-w-lg overflow-hidden rounded-3xl border border-border bg-card shadow-lift animate-rise"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="relative">
+              <img
+                src={active.src}
+                alt={active.alt}
+                width={1200}
+                height={912}
+                className="aspect-[16/10] h-auto w-full object-cover"
+              />
+              <button
+                type="button"
+                onClick={() => setSelected(null)}
+                aria-label="Close"
+                className="absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full bg-background/90 text-foreground shadow-soft transition-transform hover:scale-105"
+              >
+                <X className="h-5 w-5" aria-hidden="true" />
+              </button>
+            </div>
+            <div className="p-6">
+              <h3 className="font-display text-2xl leading-tight">{active.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                {active.info}
+              </p>
+              <div className="mt-5 flex flex-col gap-2.5 sm:flex-row">
+                <a
+                  href={telHref(PRIMARY_PHONE)}
+                  className="inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-2xl gradient-cta px-4 text-sm font-bold text-primary-foreground shadow-soft transition-transform hover:scale-[1.02]"
+                >
+                  <Phone className="h-4 w-4" aria-hidden="true" />
+                  Call {formatPhone(PRIMARY_PHONE)}
+                </a>
+                <a
+                  href={waHref()}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-2xl bg-accent px-4 text-sm font-bold text-accent-foreground transition-transform hover:scale-[1.02]"
+                >
+                  <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                  WhatsApp Us
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </>
   );
 }

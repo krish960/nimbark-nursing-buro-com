@@ -26,7 +26,11 @@ export const PHONES = ["7387788719"] as const;
 export const PRIMARY_PHONE = PHONES[0];
 
 export const telHref = (phone: string) => `tel:+91${phone}`;
-export const waHref = (phone: string = PRIMARY_PHONE) => `https://wa.me/91${phone}`;
+
+export const WHATSAPP_MESSAGE = `Hi, ${BRAND} team! I saw your website and I need home care / nursing services at my home in Pune. Please share details. — Thank you`;
+
+export const waHref = (phone: string = PRIMARY_PHONE) =>
+  `https://wa.me/91${phone}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 export const formatPhone = (phone: string) =>
   `+91 ${phone.slice(0, 5)} ${phone.slice(5)}`;

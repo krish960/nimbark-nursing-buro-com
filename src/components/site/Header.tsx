@@ -6,14 +6,14 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-primary/10 bg-background/90 backdrop-blur-md">
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:px-6 lg:px-8">
         <a href="#home" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
           <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl gradient-cta text-primary-foreground shadow-soft">
             <HeartPulse className="h-5 w-5" aria-hidden="true" />
           </span>
           <span className="min-w-0">
-            <span className="block truncate font-display text-[15px] font-extrabold leading-tight sm:text-lg">
+            <span className="block truncate font-display text-[17px] font-normal leading-tight sm:text-xl">
               {BRAND}
             </span>
             <span className="block truncate text-[11px] font-medium text-muted-foreground sm:text-xs">
@@ -28,7 +28,7 @@ export function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="rounded-full px-3 py-2 text-sm font-semibold text-foreground/80 transition-colors hover:bg-muted hover:text-primary"
+                className="rounded-full px-3 py-2 text-sm font-semibold text-foreground/80 transition-colors hover:bg-primary-soft hover:text-primary"
               >
                 {link.label}
               </a>
@@ -61,7 +61,7 @@ export function Header() {
                 <a
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-xl px-3 py-3.5 text-base font-semibold text-foreground/90 transition-colors hover:bg-muted hover:text-primary"
+                  className="block rounded-xl px-3 py-3.5 text-base font-semibold text-foreground/90 transition-colors hover:bg-primary-soft hover:text-primary"
                 >
                   {link.label}
                 </a>
