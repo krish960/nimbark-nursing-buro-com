@@ -1,4 +1,7 @@
-import { HeartPulse, MapPin, Phone } from "lucide-react";
+"use client";
+
+import { HeartPulse, MapPin, Phone, X } from "lucide-react";
+import { useState } from "react";
 import {
   ADDRESS_EN,
   ADDRESS_MR,
@@ -10,7 +13,11 @@ import {
   telHref,
 } from "@/lib/site";
 
+const PORTFOLIO_URL = "https://portfolio-project-final.vercel.app/#about";
+
 export function Footer() {
+  const [showWelcome, setShowWelcome] = useState(false);
+
   return (
     <footer className="border-t border-primary/20 bg-primary text-primary-foreground">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -71,17 +78,73 @@ export function Footer() {
           </p>
           <p>
             Developed by{" "}
-            <a
-              href="https://portfolio-project-final.vercel.app/#about"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-primary-foreground hover:underline"
+            <button
+              type="button"
+              onClick={() => setShowWelcome(true)}
+              className="font-semibold text-primary-foreground underline-offset-2 hover:underline"
             >
               Krushna Gajanan Thombare
-            </a>
+            </button>
           </p>
         </div>
       </div>
+
+      {showWelcome && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setShowWelcome(false);
+          }}
+          role="presentation"
+        >
+          <div
+            className="relative w-full max-w-sm overflow-hidden rounded-3xl bg-white p-6 text-center text-foreground shadow-2xl"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="welcome-title"
+          >
+            <button
+              type="button"
+              onClick={() => setShowWelcome(false)}
+              className="absolute right-4 top-4 rounded-full p-1 text-foreground/50 transition-colors hover:bg-muted hover:text-foreground"
+              aria-label="Close"
+            >
+              <X className="h-4 w-4" aria-hidden="true" />
+            </button>
+
+            <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-primary/10 text-primary">
+              <HeartPulse className="h-6 w-6" aria-hidden="true" />
+            </div>
+
+            <h3 id="welcome-title" className="mt-4 text-lg font-bold">
+              Welcome!
+            </h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              You are about to visit the portfolio of{" "}
+              <span className="font-semibold text-foreground">Krushna Gajanan Thombare</span>.
+            </p>
+
+            <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:justify-center">
+              <a
+                href={PORTFOLIO_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setShowWelcome(false)}
+                className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105"
+              >
+                Visit Portfolio
+              </a>
+              <button
+                type="button"
+                onClick={() => setShowWelcome(false)}
+                className="inline-flex items-center justify-center rounded-full bg-muted px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-muted/80"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </footer>
   );
 }
