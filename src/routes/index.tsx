@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import {
   Check,
   CheckCircle2,
@@ -82,9 +83,24 @@ const pillars = [
 ];
 
 const gallery = [
-  { src: patientImage, alt: "Nursing caretaker supporting an elderly patient at home" },
-  { src: babySitterImage, alt: "Baby sitter playing with a toddler at home" },
-  { src: homeHelpImage, alt: "Home helper assisting with household work" },
+  {
+    src: patientImage,
+    alt: "Nursing caretaker supporting an elderly patient at home",
+    title: "Patient Care & Nursing Caretaker",
+    info: "We arrange trained nursing caretakers and bedside attendants for patients recovering at home. They help with daily needs, hygiene, mobility and comfort — with patience, discipline and dignity, day or night.",
+  },
+  {
+    src: babySitterImage,
+    alt: "Baby sitter playing with a toddler at home",
+    title: "New Born Baby Care & Baby Sitter",
+    info: "Our experienced baby sitters and newborn care staff look after feeding, bathing, sleep routines and safe play, so your child stays comfortable and cared for while you are at work or travelling.",
+  },
+  {
+    src: homeHelpImage,
+    alt: "Home helper assisting with household work",
+    title: "Home Helper & Maid Assistance",
+    info: "Trusted home helpers and maids take care of everyday household work and support elders through the day, keeping your home clean, organised and easy to run.",
+  },
 ];
 
 function HomePage() {
