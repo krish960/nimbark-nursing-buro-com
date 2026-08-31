@@ -247,10 +247,13 @@ function HomePage() {
           </div>
 
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {gallery.map((image) => (
-              <div
+            {gallery.map((image, index) => (
+              <button
                 key={image.alt}
-                className="overflow-hidden rounded-3xl border border-border bg-card shadow-soft"
+                type="button"
+                onClick={() => setSelected(index)}
+                aria-haspopup="dialog"
+                className="group relative cursor-pointer overflow-hidden rounded-3xl border border-border bg-card text-left shadow-soft transition-shadow hover:shadow-lift"
               >
                 <img
                   src={image.src}
@@ -258,9 +261,13 @@ function HomePage() {
                   width={1200}
                   height={912}
                   loading="lazy"
-                  className="aspect-[4/3] h-auto w-full object-cover transition-transform duration-500 hover:scale-[1.03]"
+                  className="aspect-[4/3] h-auto w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
-              </div>
+                <span className="absolute inset-x-3 bottom-3 flex items-center justify-between gap-2 rounded-2xl bg-foreground/70 px-4 py-2.5 text-sm font-bold text-background backdrop-blur-sm">
+                  <span className="truncate">{image.title}</span>
+                  <span className="shrink-0 text-xs font-semibold opacity-80">Tap for info</span>
+                </span>
+              </button>
             ))}
           </div>
         </div>
