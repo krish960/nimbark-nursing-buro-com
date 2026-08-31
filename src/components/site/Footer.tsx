@@ -1,4 +1,7 @@
-import { HeartPulse, MapPin, Phone } from "lucide-react";
+"use client";
+
+import { HeartPulse, MapPin, Phone, X } from "lucide-react";
+import { useState } from "react";
 import {
   ADDRESS_EN,
   ADDRESS_MR,
