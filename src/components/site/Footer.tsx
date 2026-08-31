@@ -121,7 +121,7 @@ export function Footer() {
             </h3>
             <p className="mt-2 text-sm text-muted-foreground">
               You are about to visit the portfolio of{" "}
-              <span className="font-semibold text-foreground">Krushna Gajanan Thombare</span>.
+              <span className="font-semibold text-foreground">Krushna Gajanan Thombare</span>. It opens in a new tab so you can easily return here.
             </p>
 
             <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:justify-center">
@@ -139,7 +139,7 @@ export function Footer() {
                 onClick={() => setShowWelcome(false)}
                 className="inline-flex items-center justify-center rounded-full bg-muted px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-muted/80"
               >
-                Cancel
+                Back to Site
               </button>
             </div>
           </div>
