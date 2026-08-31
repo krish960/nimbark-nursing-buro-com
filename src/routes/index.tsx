@@ -12,6 +12,7 @@ import {
   ShieldCheck,
   Sparkles,
   Users,
+  X,
 } from "lucide-react";
 
 import heroImage from "@/assets/hero-home-care.jpg";
@@ -104,6 +105,9 @@ const gallery = [
 ];
 
 function HomePage() {
+  const [selected, setSelected] = useState<number | null>(null);
+  const active = selected !== null ? gallery[selected] : null;
+
   return (
     <>
       {/* HOME / HERO */}
@@ -449,6 +453,63 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      {active ? (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={active.title}
+          className="fixed inset-0 z-50 grid place-items-center bg-foreground/60 p-4 backdrop-blur-sm"
+          onClick={() => setSelected(null)}
+        >
+          <div
+            className="w-full max-w-lg overflow-hidden rounded-3xl border border-border bg-card shadow-lift animate-rise"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="relative">
+              <img
+                src={active.src}
+                alt={active.alt}
+                width={1200}
+                height={912}
+                className="aspect-[16/10] h-auto w-full object-cover"
+              />
+              <button
+                type="button"
+                onClick={() => setSelected(null)}
+                aria-label="Close"
+                className="absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full bg-background/90 text-foreground shadow-soft transition-transform hover:scale-105"
+              >
+                <X className="h-5 w-5" aria-hidden="true" />
+              </button>
+            </div>
+            <div className="p-6">
+              <h3 className="font-display text-2xl leading-tight">{active.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                {active.info}
+              </p>
+              <div className="mt-5 flex flex-col gap-2.5 sm:flex-row">
+                <a
+                  href={telHref(PRIMARY_PHONE)}
+                  className="inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-2xl gradient-cta px-4 text-sm font-bold text-primary-foreground shadow-soft transition-transform hover:scale-[1.02]"
+                >
+                  <Phone className="h-4 w-4" aria-hidden="true" />
+                  Call {formatPhone(PRIMARY_PHONE)}
+                </a>
+                <a
+                  href={waHref()}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-2xl bg-accent px-4 text-sm font-bold text-accent-foreground transition-transform hover:scale-[1.02]"
+                >
+                  <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                  WhatsApp Us
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </>
   );
 }
