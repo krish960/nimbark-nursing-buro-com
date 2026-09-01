@@ -8,7 +8,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-export const BRAND = "Nimbark Nursing Bureau";
+export const BRAND = "Nimbalk Nursing Bureau";
 export const TAGLINE_MR = "सेवा हीच आमची ओळख...";
 export const VALUES_MR = "सेवा • माणुसकी • विश्वास हीच आमची प्रतिज्ञा";
 export const VALUES_EN = "Service • Humanity • Trust";

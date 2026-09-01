@@ -80,20 +80,34 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Nimbark Nursing Bureau — Home Care & Nursing, Wakad Pune" },
+      { title: "Nimbalk Nursing Bureau" },
       {
         name: "description",
         content:
-          "Nimbark Nursing Bureau, Wakad Pune — experienced, trained and trusted staff for newborn baby care, patient care, nursing caretakers, baby sitters and home help.",
+          "Nimbalk Nursing Bureau, Wakad Pune — experienced, trained and trusted staff for newborn baby care, patient care, nursing caretakers, baby sitters and home help.",
       },
-      { name: "author", content: "Nimbark Nursing Bureau" },
+      { name: "author", content: "Nimbalk Nursing Bureau" },
+      { name: "theme-color", content: "#2563EB" },
       { property: "og:type", content: "website" },
+      { property: "og:title", content: "Nimbalk Nursing Bureau" },
+      {
+        property: "og:description",
+        content:
+          "Nimbalk Nursing Bureau, Wakad Pune — experienced, trained and trusted staff for newborn baby care, patient care, nursing caretakers, baby sitters and home help.",
+      },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Nimbalk Nursing Bureau" },
+      {
+        name: "twitter:description",
+        content:
+          "Nimbalk Nursing Bureau, Wakad Pune — experienced, trained and trusted staff for newborn baby care, patient care, nursing caretakers, baby sitters and home help.",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
-      { rel: "apple-touch-icon", href: "/favicon.png" },
+      { rel: "icon", href: "/favicon.png", type: "image/png", sizes: "64x64" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
+      { rel: "manifest", href: "/manifest.json" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
