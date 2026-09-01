@@ -85,6 +85,10 @@ export function Footer() {
             >
               Krushna Gajanan Thombare
             </button>
+            {" "}•{" "}
+            <span className="font-medium text-primary-foreground/85">
+              Krunexta Technologies Pvt. Ltd.
+            </span>
           </p>
         </div>
       </div>
