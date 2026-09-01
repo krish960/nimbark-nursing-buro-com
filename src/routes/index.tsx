@@ -162,7 +162,7 @@ function HomePage() {
             <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-lift">
               <img
                 src={heroImage}
-                alt="Trained caregiver from Nimbark Nursing Bureau supporting an elderly woman at home"
+                alt="Trained caregiver from Nimbalk Nursing Bureau supporting an elderly woman at home"
                 width={1600}
                 height={1200}
                 className="aspect-[4/3] h-auto w-full object-cover"
@@ -409,7 +409,7 @@ function HomePage() {
           <div className="mt-6 grid gap-5 lg:grid-cols-2">
             <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-soft">
               <iframe
-                title="Nimbark Nursing Bureau location — Datt Mandir Road, Wakad, Pune"
+                title="Nimbalk Nursing Bureau location — Datt Mandir Road, Wakad, Pune"
                 src={MAPS_EMBED_URL}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
