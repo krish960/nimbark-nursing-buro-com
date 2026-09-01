@@ -45,7 +45,7 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nimbark Nursing Bureau — Home Care & Nursing in Wakad, Pune" },
+      { title: "Nimbalk Nursing Bureau" },
       {
         name: "description",
         content:
@@ -53,7 +53,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: "Nimbark Nursing Bureau — Home Care & Nursing in Wakad, Pune",
+        content: "Nimbalk Nursing Bureau",
       },
       {
         property: "og:description",
