@@ -56,7 +56,7 @@ export function InquiryPopup() {
             </div>
           </div>
           <div className="max-h-[70vh] overflow-y-auto">
-            <InquiryForm onSent={close} />
+            <InquiryForm plain onSent={close} />
           </div>
         </div>
       </div>

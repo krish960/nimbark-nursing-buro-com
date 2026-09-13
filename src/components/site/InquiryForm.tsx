@@ -2,7 +2,12 @@ import { useState } from "react";
 import { MessageCircle, Send } from "lucide-react";
 import { BRAND, PRIMARY_PHONE, SERVICES } from "@/lib/site";
 
-export function InquiryForm() {
+type InquiryFormProps = {
+  onSent?: () => void;
+  plain?: boolean;
+};
+
+export function InquiryForm({ onSent, plain = false }: InquiryFormProps) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [service, setService] = useState(SERVICES[0]?.name ?? "");
@@ -29,6 +34,7 @@ export function InquiryForm() {
       "_blank",
       "noopener,noreferrer",
     );
+    onSent?.();
   };
 
   const inputClass =
@@ -37,17 +43,25 @@ export function InquiryForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-3xl border border-border bg-card p-6 shadow-soft"
+      className={
+        plain
+          ? "p-5 sm:p-6"
+          : "rounded-3xl border border-border bg-card p-6 shadow-soft"
+      }
     >
-      <span className="grid h-11 w-11 place-items-center rounded-2xl bg-primary-soft text-primary">
-        <Send className="h-5 w-5" aria-hidden="true" />
-      </span>
-      <h3 className="mt-4 text-lg font-bold">Quick Inquiry</h3>
-      <p className="mt-1 text-sm text-muted-foreground">
-        Fill this form and your details go straight to our WhatsApp.
-      </p>
+      {!plain && (
+        <>
+          <span className="grid h-11 w-11 place-items-center rounded-2xl bg-primary-soft text-primary">
+            <Send className="h-5 w-5" aria-hidden="true" />
+          </span>
+          <h3 className="mt-4 text-lg font-bold">Quick Inquiry</h3>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Fill this form and your details go straight to our WhatsApp.
+          </p>
+        </>
+      )}
 
-      <div className="mt-4 grid gap-3">
+      <div className={plain ? "grid gap-3" : "mt-4 grid gap-3"}>
         <label className="grid gap-1.5">
           <span className="text-xs font-bold uppercase tracking-wide text-muted-foreground">
             Your Name
