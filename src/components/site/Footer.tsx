@@ -1,6 +1,6 @@
 "use client";
 
-import { HeartPulse, MapPin, Phone, X } from "lucide-react";
+import { HeartPulse, MapPin, MessageCircle, Phone, X } from "lucide-react";
 import { useState } from "react";
 import {
   ADDRESS_EN,
@@ -85,6 +85,16 @@ export function Footer() {
             >
               Krushna Gajanan Thombare
             </button>
+            <a
+              href="https://wa.me/917823040317?text=Hi%20Krushna!%20I%20saw%20your%20work%20on%20the%20Nimbark%20Nursing%20Bureau%20website%20and%20I%20want%20a%20website%20for%20my%20business."
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Contact developer on WhatsApp"
+              title="Contact developer on WhatsApp"
+              className="ml-2 inline-flex h-6 w-6 translate-y-0.5 items-center justify-center rounded-full bg-primary-foreground/15 text-primary-foreground transition-colors hover:bg-primary-foreground/25"
+            >
+              <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
+            </a>
           </p>
         </div>
       </div>
