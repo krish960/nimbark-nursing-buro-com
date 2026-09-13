@@ -80,27 +80,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Nimbalk Nursing Bureau" },
+      { title: "Nimbark Nursing Bureau" },
       {
         name: "description",
         content:
-          "Nimbalk Nursing Bureau, Wakad Pune — experienced, trained and trusted staff for newborn baby care, patient care, nursing caretakers, baby sitters and home help.",
+          "Nimbark Nursing Bureau, Wakad Pune — experienced, trained and trusted staff for newborn baby care, patient care, nursing caretakers, baby sitters and home help.",
       },
-      { name: "author", content: "Nimbalk Nursing Bureau" },
+      { name: "author", content: "Nimbark Nursing Bureau" },
       { name: "theme-color", content: "#2563EB" },
       { property: "og:type", content: "website" },
-      { property: "og:title", content: "Nimbalk Nursing Bureau" },
+      { property: "og:title", content: "Nimbark Nursing Bureau" },
       {
         property: "og:description",
         content:
-          "Nimbalk Nursing Bureau, Wakad Pune — experienced, trained and trusted staff for newborn baby care, patient care, nursing caretakers, baby sitters and home help.",
+          "Nimbark Nursing Bureau, Wakad Pune — experienced, trained and trusted staff for newborn baby care, patient care, nursing caretakers, baby sitters and home help.",
       },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Nimbalk Nursing Bureau" },
+      { name: "twitter:title", content: "Nimbark Nursing Bureau" },
       {
         name: "twitter:description",
         content:
-          "Nimbalk Nursing Bureau, Wakad Pune — experienced, trained and trusted staff for newborn baby care, patient care, nursing caretakers, baby sitters and home help.",
+          "Nimbark Nursing Bureau, Wakad Pune — experienced, trained and trusted staff for newborn baby care, patient care, nursing caretakers, baby sitters and home help.",
       },
     ],
     links: [
