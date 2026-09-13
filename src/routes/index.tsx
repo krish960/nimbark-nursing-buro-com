@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
   Check,
   CheckCircle2,
-  Clock,
+
   HeartHandshake,
   MapPin,
   MessageCircle,
@@ -20,6 +20,7 @@ import aboutImage from "@/assets/about-care.jpg";
 import patientImage from "@/assets/patient-care.jpg";
 import homeHelpImage from "@/assets/home-help.jpg";
 import babySitterImage from "@/assets/baby-sitter.jpg";
+import { InquiryForm } from "@/components/site/InquiryForm";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { ServiceCard } from "@/components/site/ServiceCard";
 import {
@@ -45,7 +46,7 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nimbalk Nursing Bureau" },
+      { title: "Nimbark Nursing Bureau" },
       {
         name: "description",
         content:
@@ -53,7 +54,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: "Nimbalk Nursing Bureau",
+        content: "Nimbark Nursing Bureau",
       },
       {
         property: "og:description",
@@ -162,7 +163,7 @@ function HomePage() {
             <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-lift">
               <img
                 src={heroImage}
-                alt="Trained caregiver from Nimbalk Nursing Bureau supporting an elderly woman at home"
+                alt="Trained caregiver from Nimbark Nursing Bureau supporting an elderly woman at home"
                 width={1600}
                 height={1200}
                 className="aspect-[4/3] h-auto w-full object-cover"
@@ -409,7 +410,7 @@ function HomePage() {
           <div className="mt-6 grid gap-5 lg:grid-cols-2">
             <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-soft">
               <iframe
-                title="Nimbalk Nursing Bureau location — Datt Mandir Road, Wakad, Pune"
+                title="Nimbark Nursing Bureau location — Datt Mandir Road, Wakad, Pune"
                 src={MAPS_EMBED_URL}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -438,17 +439,7 @@ function HomePage() {
                 </a>
               </div>
 
-              <div className="rounded-3xl border border-border bg-card p-6 shadow-soft">
-                <span className="grid h-11 w-11 place-items-center rounded-2xl bg-accent-soft text-accent">
-                  <Clock className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <h3 className="mt-4 text-lg font-bold">Talk To Us</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  Tell us the type of care you need — newborn baby care, baby sitter, household work
-                  assistance, patient care, nursing caretaker or home helper — and we will arrange
-                  experienced, trained and trusted staff.
-                </p>
-              </div>
+              <InquiryForm />
             </div>
           </div>
         </div>
