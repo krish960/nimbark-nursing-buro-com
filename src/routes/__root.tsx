@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/site/Header";
+import { InquiryPopup } from "@/components/site/InquiryPopup";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 
@@ -149,6 +150,7 @@ function RootComponent() {
         </main>
         <Footer />
         <WhatsAppFab />
+        <InquiryPopup />
       </div>
     </QueryClientProvider>
   );
