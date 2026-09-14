@@ -148,7 +148,6 @@ function RootComponent() {
           <Outlet />
         </main>
         <Footer />
-        <WhatsAppFab />
         <InquiryPopup />
       </div>
     </QueryClientProvider>

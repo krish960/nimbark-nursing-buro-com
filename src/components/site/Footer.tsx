@@ -62,6 +62,16 @@ export function Footer() {
               <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
               {formatPhone(PRIMARY_PHONE)}
             </a>
+            <a
+              href={waHref()}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat with us on WhatsApp"
+              className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground/90 transition-colors hover:text-primary-foreground"
+            >
+              <MessageCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
+              WhatsApp us
+            </a>
             <p className="mt-3 flex items-start gap-2 text-sm text-primary-foreground/75">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
               <span>
