@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Check,
   CheckCircle2,
@@ -105,9 +105,33 @@ const gallery = [
   },
 ];
 
+const heroSlides = [
+  {
+    src: heroImage,
+    alt: "Trained caregiver from Nimbark Nursing Bureau supporting an elderly woman at home",
+  },
+  {
+    src: aboutImage,
+    alt: "Trained caregiver holding a newborn baby at home",
+  },
+  {
+    src: patientImage,
+    alt: "Nursing caretaker supporting an elderly patient at home",
+  },
+];
+
 function HomePage() {
   const [selected, setSelected] = useState<number | null>(null);
+  const [heroSlide, setHeroSlide] = useState(0);
   const active = selected !== null ? gallery[selected] : null;
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setHeroSlide((current) => (current + 1) % heroSlides.length);
+    }, 4200);
+
+    return () => window.clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -162,12 +186,27 @@ function HomePage() {
           <div className="min-w-0">
             <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-lift">
               <img
-                src={heroImage}
-                alt="Trained caregiver from Nimbark Nursing Bureau supporting an elderly woman at home"
+                key={heroSlides[heroSlide]?.src}
+                src={heroSlides[heroSlide]?.src ?? heroImage}
+                alt={heroSlides[heroSlide]?.alt ?? heroSlides[0].alt}
                 width={1600}
                 height={1200}
-                className="aspect-[4/3] h-auto w-full object-cover"
+                className="aspect-[4/3] h-auto w-full object-cover animate-fade-in"
               />
+            </div>
+            <div className="mt-3 flex justify-center gap-2" aria-label="Hero image slideshow">
+              {heroSlides.map((slide, index) => (
+                <button
+                  key={slide.src}
+                  type="button"
+                  aria-label={`Show image ${index + 1}`}
+                  aria-current={heroSlide === index}
+                  onClick={() => setHeroSlide(index)}
+                  className={`h-2 rounded-full transition-all ${
+                    heroSlide === index ? "w-8 bg-primary" : "w-2 bg-border"
+                  }`}
+                />
+              ))}
             </div>
             <p className="mt-4 rounded-2xl border border-border bg-card px-4 py-3 text-center text-sm font-semibold text-foreground/80 shadow-soft">
               {VALUES_MR}
