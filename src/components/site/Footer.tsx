@@ -11,6 +11,7 @@ import {
   TAGLINE_MR,
   formatPhone,
   telHref,
+  waHref,
 } from "@/lib/site";
 
 const PORTFOLIO_URL = "https://portfolio-project-final.vercel.app/#about";
