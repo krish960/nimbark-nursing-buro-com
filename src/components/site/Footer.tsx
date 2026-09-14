@@ -55,23 +55,25 @@ export function Footer() {
             <h4 className="text-xs font-bold uppercase tracking-[0.18em] text-primary-foreground/65">
               Contact
             </h4>
-            <a
-              href={telHref(PRIMARY_PHONE)}
-              className="mt-4 inline-flex items-center gap-2 text-base font-bold hover:text-primary-foreground/75"
-            >
-              <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
-              {formatPhone(PRIMARY_PHONE)}
-            </a>
-            <a
-              href={waHref()}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Chat with us on WhatsApp"
-              className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground/90 transition-colors hover:text-primary-foreground"
-            >
-              <MessageCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
-              WhatsApp us
-            </a>
+            <div className="mt-4 flex items-center gap-3">
+              <a
+                href={telHref(PRIMARY_PHONE)}
+                className="inline-flex items-center gap-2 text-base font-bold hover:text-primary-foreground/75"
+              >
+                <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
+                {formatPhone(PRIMARY_PHONE)}
+              </a>
+              <a
+                href={waHref()}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat with us on WhatsApp"
+                title="Chat with us on WhatsApp"
+                className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-primary-foreground/15 text-primary-foreground transition-colors hover:bg-primary-foreground/25"
+              >
+                <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
+              </a>
+            </div>
             <p className="mt-3 flex items-start gap-2 text-sm text-primary-foreground/75">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
               <span>
