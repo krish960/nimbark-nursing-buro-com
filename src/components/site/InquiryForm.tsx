@@ -70,7 +70,7 @@ export function InquiryForm({ onSent, plain = false }: InquiryFormProps) {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="e.g. Rahul Patil"
+            placeholder="Enter Name"
             className={inputClass}
           />
         </label>
@@ -86,7 +86,7 @@ export function InquiryForm({ onSent, plain = false }: InquiryFormProps) {
             pattern="[0-9+ ]{10,15}"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            placeholder="e.g. 98765 43210"
+            placeholder="Enter Number"
             className={inputClass}
           />
         </label>
