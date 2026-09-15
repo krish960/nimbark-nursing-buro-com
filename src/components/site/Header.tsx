@@ -1,12 +1,30 @@
-import { HeartPulse, Menu, Phone, X } from "lucide-react";
+import { HeartPulse, Megaphone, Menu, Phone, Sparkles, X } from "lucide-react";
 import { useState } from "react";
 import { BRAND, NAV_LINKS, PRIMARY_PHONE, telHref } from "@/lib/site";
+
+const UPCOMING = ["Election Services", "AC Repair & Service", "More Home Services"];
 
 export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 border-b border-primary/10 bg-background/90 backdrop-blur-md">
+      <div className="border-b border-primary/10 bg-primary text-primary-foreground">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-4 gap-y-1 px-4 py-1.5 text-[11px] font-semibold sm:justify-between sm:px-6 sm:text-xs lg:px-8">
+          <span className="inline-flex items-center gap-1.5">
+            <Megaphone className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+            Coming Soon — New Services
+          </span>
+          <span className="flex flex-wrap items-center justify-center gap-x-3 gap-y-0.5">
+            {UPCOMING.map((item) => (
+              <span key={item} className="inline-flex items-center gap-1">
+                <Sparkles className="h-3 w-3" aria-hidden="true" />
+                {item}
+              </span>
+            ))}
+          </span>
+        </div>
+      </div>
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:px-6 lg:px-8">
         <a href="#home" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
           <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl gradient-cta text-primary-foreground shadow-soft">
