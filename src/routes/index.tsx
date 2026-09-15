@@ -188,7 +188,7 @@ function HomePage() {
               <img
                 key={heroSlides[heroSlide]?.src}
                 src={heroSlides[heroSlide]?.src ?? heroImage}
-                alt={heroSlides[heroSlide]?.alt ?? heroSlides[0].alt}
+                alt={heroSlides[heroSlide]?.alt ?? heroSlides[0]?.alt ?? ""}
                 width={1600}
                 height={1200}
                 className="aspect-[4/3] h-auto w-full object-cover animate-fade-in"
