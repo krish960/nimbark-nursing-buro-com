@@ -9,7 +9,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-primary/10 bg-background/90 backdrop-blur-md">
-      <div className="border-b border-primary/10 bg-primary text-primary-foreground">
+      <div className="hidden border-b border-primary/10 bg-primary text-primary-foreground sm:block">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-4 gap-y-1 px-4 py-1.5 text-[11px] font-semibold sm:justify-between sm:px-6 sm:text-xs lg:px-8">
           <span className="inline-flex items-center gap-1.5">
             <Megaphone className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />

@@ -176,3 +176,11 @@
     transform: translateY(0);
   }
 }
+
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee-x {
+  animation: marquee-x 14s linear infinite;
+}
