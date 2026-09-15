@@ -71,6 +71,25 @@ export function Header() {
         </div>
       </div>
 
+      <div className="overflow-hidden border-t border-primary/10 bg-primary py-1.5 text-primary-foreground sm:hidden">
+        <div className="animate-marquee-x flex w-max items-center gap-6 text-[11px] font-semibold">
+          {[0, 1].map((copy) => (
+            <span key={copy} className="flex items-center gap-6" aria-hidden={copy === 1}>
+              <span className="inline-flex items-center gap-1.5">
+                <Megaphone className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                Coming Soon — New Services:
+              </span>
+              {UPCOMING.map((item) => (
+                <span key={item} className="inline-flex items-center gap-1">
+                  <Sparkles className="h-3 w-3" aria-hidden="true" />
+                  {item}
+                </span>
+              ))}
+            </span>
+          ))}
+        </div>
+      </div>
+
       {open ? (
         <nav className="border-t border-border bg-background px-4 pb-4 pt-2 lg:hidden">
           <ul className="flex flex-col">
