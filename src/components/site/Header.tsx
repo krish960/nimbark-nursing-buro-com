@@ -1,6 +1,8 @@
-import { HeartPulse, Menu, Phone, X } from "lucide-react";
+import { HeartPulse, Megaphone, Menu, Phone, Sparkles, X } from "lucide-react";
 import { useState } from "react";
 import { BRAND, NAV_LINKS, PRIMARY_PHONE, telHref } from "@/lib/site";
+
+const UPCOMING = ["Election Services", "AC Repair & Service", "More Home Services"];
 
 export function Header() {
   const [open, setOpen] = useState(false);
