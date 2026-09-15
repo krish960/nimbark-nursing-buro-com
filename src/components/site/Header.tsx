@@ -9,7 +9,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-primary/10 bg-background/90 backdrop-blur-md">
-      <div className="border-b border-primary/10 bg-primary text-primary-foreground">
+      <div className="hidden border-b border-primary/10 bg-primary text-primary-foreground sm:block">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-4 gap-y-1 px-4 py-1.5 text-[11px] font-semibold sm:justify-between sm:px-6 sm:text-xs lg:px-8">
           <span className="inline-flex items-center gap-1.5">
             <Megaphone className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
@@ -68,6 +68,25 @@ export function Header() {
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
+        </div>
+      </div>
+
+      <div className="overflow-hidden border-t border-primary/10 bg-primary py-1.5 text-primary-foreground sm:hidden">
+        <div className="animate-marquee-x flex w-max items-center gap-6 text-[11px] font-semibold">
+          {[0, 1].map((copy) => (
+            <span key={copy} className="flex items-center gap-6" aria-hidden={copy === 1}>
+              <span className="inline-flex items-center gap-1.5">
+                <Megaphone className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                Coming Soon — New Services:
+              </span>
+              {UPCOMING.map((item) => (
+                <span key={item} className="inline-flex items-center gap-1">
+                  <Sparkles className="h-3 w-3" aria-hidden="true" />
+                  {item}
+                </span>
+              ))}
+            </span>
+          ))}
         </div>
       </div>
 
